@@ -1,0 +1,74 @@
+---
+// Header-B: Logo centralizado, nav abaixo
+import siteConfig from '../data/siteConfig.json';
+import { getAllPosts } from '../lib/posts';
+
+const { name, menu: baseMenu = [] } = siteConfig;
+
+// Buscar categorias REAIS do banco de dados (SSR)
+const allPosts = await getAllPosts();
+const realCategories = [...new Set(allPosts.map(p => p.category))].filter(Boolean);
+
+// Injetar categorias reais no item "Blog" do menu
+const menu = baseMenu.map((item: any) => {
+  if (item.label.toLowerCase() === 'blog' || item.href === '/blog') {
+    return {
+      ...item,
+      children: realCategories.length
+        ? realCategories.map(cat => ({
+            label: cat,
+            href: `/categoria/${cat.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-')}`
+          }))
+        : undefined,
+    };
+  }
+  return item;
+});
+---
+<header class="w-full bg-white z-[100] shadow-sm sticky top-0">
+  <!-- Top bar: logo centralizado -->
+  <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col items-center gap-1">
+    <a href="/" class="flex items-center gap-3 font-black text-2xl text-dark hover:opacity-80 transition-opacity">
+      <div class="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white text-lg font-black">
+        {name.charAt(0).toUpperCase()}
+      </div>
+      {name}
+    </a>
+    <p class="text-xs text-gray-500 uppercase tracking-widest">Portal de conteúdo</p>
+  </div>
+
+  <!-- Nav bar abaixo -->
+  <div class="border-t border-gray-100 bg-gray-50">
+    <nav class="max-w-6xl mx-auto px-4 flex flex-wrap md:flex-nowrap items-center justify-center gap-1 min-h-12 py-2 overflow-visible">
+      {menu.map((item: any) => (
+        item.children?.length ? (
+          <div class="relative group flex items-center shrink-0">
+            <button type="button" class="px-4 py-2 text-sm font-medium text-gray-600 group-hover:text-primary group-hover:bg-white transition-all rounded-md flex items-center gap-1 whitespace-nowrap cursor-pointer">
+              {item.label}
+              <svg class="w-3 h-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute top-full left-1/2 -translate-x-1/2 z-[110] pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              <div class="w-44 bg-white shadow-xl border border-gray-100 rounded-b-lg py-2">
+                <a href={item.href} class="block px-4 py-1.5 text-[10px] font-bold text-gray-400 uppercase tracking-tighter hover:text-primary mb-1 border-b border-gray-50 pb-1.5">
+                  Ver Tudo
+                </a>
+                {item.children.map((child: any) => (
+                  <a href={child.href} class="block px-4 py-2 text-sm text-gray-600 hover:text-primary hover:bg-gray-50 transition-colors">
+                    {child.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        ) : (
+          <a
+            href={item.href}
+            class="px-4 py-3 text-sm font-medium text-gray-600 hover:text-primary hover:bg-white transition-all whitespace-nowrap rounded-md"
+          >
+            {item.label}
+          </a>
+        )
+      ))}
+    </nav>
+  </div>
+</header>

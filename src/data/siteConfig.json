@@ -1,0 +1,53 @@
+{
+  "name": "PREFEITURADECAMPOGRANDE",
+  "slug": "prefeituradecampogrande.com.br",
+  "description": "Olá! Sou Regina Albuquerque, Urbanista, socióloga e professora da faculdade de arquitetura e urbanismo da UFMS. Nascida e criada na cidade de Campo Grande, sou uma pessoa simples e humilde que tem o desejo de transmitir meu conhecimento através da internet. Atuando por mais de 7 anos na gestão de projetos na prefeitura de Campo Grande, Mato Grosso do Sul. Sou autora dos livros “A Cidade é para todos”, “Como viver na Cidade atual”. Publico constantemente notícias, artigos, conteúdos, relacionados ao urbanismo. Para você receber todo esse conteúdo direto no seu e-mail, basta se inscrever em minha newsletter.",
+  "url": "https://prefeituradecampogrande.com.br",
+  "niche": "Casa e Decoração",
+  "keywords": "Ola Sou Regina Albuquerque Urbanista sociologa e professora da faculdade de arquitetura",
+  "email": "contato@prefeituradecampogrande.com.br",
+  "palette": "teal",
+  "colors": {
+    "primary": "#0d9488",
+    "accent": "#0f766e",
+    "dark": "#042f2e"
+  },
+  "headerContrast": "light",
+  "font": "lora",
+  "fontFamily": "'Lora', serif",
+  "fontUrl": "https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap",
+  "components": {
+    "header": "Header-B",
+    "hero": "Hero-I",
+    "features": "Features-E",
+    "about": "About-G",
+    "posts": "Posts-E",
+    "footer": "Footer-H",
+    "sobre": "Sobre-B",
+    "contato": "Contato-A"
+  },
+  "menu": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog"
+    },
+    {
+      "label": "Sobre",
+      "href": "/sobre"
+    },
+    {
+      "label": "Contato",
+      "href": "/contato"
+    }
+  ],
+  "social": {
+    "instagram": "",
+    "facebook": "",
+    "twitter": "",
+    "youtube": ""
+  }
+}

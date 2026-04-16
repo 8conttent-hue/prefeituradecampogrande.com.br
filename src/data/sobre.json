@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Sobre Nós",
+    "description": "Conheça o PREFEITURADECAMPOGRANDE"
+  },
+  "hero": {
+    "title": "Sobre Nós",
+    "subtitle": "Sou Regina Albuquerque, urbanista e socióloga, com o compromisso de compartilhar conhecimento e promover uma cidade mais inclusiva. Acredito que a informação é a chave para a transformação urbana."
+  },
+  "content": "Regina Albuquerque é nascida e criada em Campo Grande, e sua trajetória profissional é pautada pela simplicidade e pela busca pela inclusão. Como professora na UFMS, seu papel é inspirar futuros profissionais e conscientizar a sociedade sobre a importância do urbanismo.",
+  "mission": "Promover a conscientização urbanística e contribuir para um desenvolvimento mais humano e sustentável da nossa cidade.",
+  "image": "/images/sobre.jpg",
+  "stats": [
+    {
+      "value": "500+",
+      "label": "Artigos"
+    },
+    {
+      "value": "100k+",
+      "label": "Leitores"
+    },
+    {
+      "value": "5",
+      "label": "Redatores"
+    }
+  ],
+  "team": []
+}

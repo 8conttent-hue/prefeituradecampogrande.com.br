@@ -1,0 +1,52 @@
+---
+// Footer-H: Gradient Background - Design vibrante e impactante
+import siteConfig from '../data/siteConfig.json';
+const { name, menu = [] } = siteConfig as any;
+const year = new Date().getFullYear();
+---
+<footer class="relative bg-gradient-to-br from-primary to-accent text-white overflow-hidden py-16 lg:py-24">
+  <!-- Overlay Pattern -->
+  <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <div class="max-w-6xl mx-auto px-4 relative z-10">
+    <div class="flex flex-col items-center text-center max-w-2xl mx-auto">
+      <div class="w-20 h-20 bg-white rounded-3xl flex items-center justify-center text-dark text-4xl font-black shadow-2xl mb-12 transform rotate-6 animate-pulse-slow">
+        {name.charAt(0).toUpperCase()}
+      </div>
+      <h3 class="text-4xl md:text-6xl font-black tracking-tighter uppercase mb-10 leading-none">
+        {name}
+      </h3>
+      
+      <p class="text-white/80 text-xl font-medium leading-relaxed mb-12">
+        Explorando novos horizontes no cuidado de enfermagem através da tecnologia e análise visual.
+      </p>
+
+      <!-- Horizontal Links -->
+      <nav class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 mb-16">
+        {menu.map((item: any) => (
+          <a href={item.href} class="text-xs font-black uppercase tracking-[0.3em] hover:text-white/100 transition-colors border-b-2 border-white/0 hover:border-white pb-1">{item.label}</a>
+        ))}
+        <a href="/contato" class="px-6 py-2 bg-white text-dark rounded-full font-black text-[10px] uppercase tracking-widest shadow-xl">Fale Conosco</a>
+      </nav>
+
+      <!-- Bottom Line -->
+      <div class="w-full flex flex-col md:flex-row items-center justify-between gap-6 pt-12 border-t border-white/20">
+         <div class="text-[10px] font-black uppercase tracking-widest opacity-60">© {year} {name}</div>
+         <div class="flex gap-6 uppercase tracking-widest text-[10px] font-bold">
+            <a href="/privacidade" class="opacity-60 hover:opacity-100 transition-opacity">POLÍTICA</a>
+            <a href="/termos" class="opacity-60 hover:opacity-100 transition-opacity">TERMOS</a>
+         </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+   @keyframes pulse-slow {
+      0%, 100% { transform: rotate(6deg) scale(1); }
+      50% { transform: rotate(6deg) scale(1.05); }
+   }
+   .animate-pulse-slow {
+      animation: pulse-slow 5s ease-in-out infinite;
+   }
+</style>

@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "PREFEITURADECAMPOGRANDE — Transformando Espaços, Transformando Vidas",
+    "description": "Conheça o Urbanismo sob a Perspectiva de Regina Albuquerque"
+  },
+  "hero": {
+    "title": "Transformando Espaços, Transformando Vidas",
+    "subtitle": "Conheça o Urbanismo sob a Perspectiva de Regina Albuquerque",
+    "btnText": "Inscreva-se na Newsletter",
+    "bgImage": "/images/hero.jpg",
+    "btnLink": "/blog"
+  },
+  "features": {
+    "title": "O que Oferecemos",
+    "items": [
+      {
+        "icon": "🏡",
+        "title": "Projetos Urbanos",
+        "desc": "Experiência em gestão de projetos para tornar a cidade mais acessível e acolhedora."
+      },
+      {
+        "icon": "📚",
+        "title": "Educação e Conhecimento",
+        "desc": "Conteúdos educativos sobre urbanismo, ideal para estudantes e interessados na área."
+      },
+      {
+        "icon": "📰",
+        "title": "Notícias e Atualizações",
+        "desc": "Fique por dentro das novidades sobre urbanismo e arquitetura em Campo Grande."
+      }
+    ]
+  },
+  "about": {
+    "title": "Sobre Regina Albuquerque",
+    "desc": "Sou Regina Albuquerque, urbanista e socióloga, com o compromisso de compartilhar conhecimento e promover uma cidade mais inclusiva. Acredito que a informação é a chave para a transformação urbana.",
+    "stats": [
+      {
+        "value": "7+",
+        "label": "Anos de Experiência"
+      },
+      {
+        "value": "2",
+        "label": "Livros Publicados"
+      }
+    ],
+    "image": "/images/about.jpg",
+    "btnText": "Saiba Mais",
+    "btnLink": "/sobre"
+  },
+  "posts": {
+    "title": "Últimos Artigos",
+    "limit": 3,
+    "btnText": "Ver Blog",
+    "btnLink": "/blog"
+  }
+}
